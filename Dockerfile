@@ -39,7 +39,7 @@ RUN ( \
 
   
 # Define data volumes
-VOLUME ["/etc/gitlab", "/var/opt/gitlab", "/var/log/gitlab"]
+#VOLUME ["/etc/gitlab", "/var/opt/gitlab", "/var/log/gitlab"]
 
 # Copy assets
 COPY assets/wrapper /usr/local/bin/
