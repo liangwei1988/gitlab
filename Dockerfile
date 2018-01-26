@@ -40,10 +40,10 @@ RUN ( \
   
 # Define data volumes
 #VOLUME ["/etc/gitlab", "/var/opt/gitlab", "/var/log/gitlab"]
-COPY RELEASE /
+#COPY RELEASE /
 # Copy assets
 COPY assets/wrapper /usr/local/bin/
 
 # Wrapper to handle signal, trigger runit and reconfigure GitLab
 #CMD ["/usr/local/bin/wrapper"]
-CMD ["/opt/gitlab/embedded/bin/runsvdir-start"]
+#CMD ["/opt/gitlab/embedded/bin/runsvdir-start"]
