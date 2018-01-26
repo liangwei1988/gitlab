@@ -18,7 +18,7 @@ function failed_pg_upgrade() {
 
 trap "sigterm_handler; exit" TERM
 
-source /RELEASE
+#source /RELEASE
 #echo "Thank you for using GitLab Docker Image!"
 #echo "Current version: $RELEASE_PACKAGE=$RELEASE_VERSION"
 #echo ""
@@ -46,7 +46,7 @@ source /RELEASE
 # Copy gitlab.rb for the first time
 if [[ ! -e /etc/gitlab/gitlab.rb ]]; then
     echo "Installing gitlab.rb config..."
-    cp /opt/gitlab/etc/gitlab.rb.template /etc/gitlab/gitlab.rb
+    cp /assets/gitlab.rb /etc/gitlab/gitlab.rb
     chmod 0600 /etc/gitlab/gitlab.rb
 fi
 
@@ -101,7 +101,7 @@ if [ -n "${GITLAB_POST_RECONFIGURE_SCRIPT+x}" ]; then
 fi
 
 # Tail all logs
-#gitlab-ctl tail &
+gitlab-ctl tail &
 
 # Wait for SIGTERM
-#wait
+wait
