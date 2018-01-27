@@ -101,7 +101,7 @@ if [ -n "${GITLAB_POST_RECONFIGURE_SCRIPT+x}" ]; then
 fi
 
 # Tail all logs
-gitlab-ctl tail &
+#gitlab-ctl tail &
 
 # Wait for SIGTERM
-wait
+#wait
